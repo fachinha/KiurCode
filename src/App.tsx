@@ -29,8 +29,8 @@ export const App: React.FC = () => {
         <ErpSection />
         <Portfolio />
         <AboutFounder />
-        <FAQ />
         <Contact />
+        <FAQ />
       </main>
 
       {/* Footer */}

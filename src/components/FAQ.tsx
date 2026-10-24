@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, HelpCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { FAQS } from '../data/content';
 
 export const FAQ: React.FC = () => {
@@ -10,18 +10,14 @@ export const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-white relative border-b border-zinc-200">
+    <section id="faq" className="py-20 bg-white relative border-b border-zinc-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-mono font-bold uppercase tracking-[0.2em] text-kiur-red mb-3 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>Preguntas Frecuentes</span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-black text-zinc-950 tracking-tight uppercase mb-4">
-            Preguntas Frecuentes.
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <h2 className="text-3xl sm:text-4xl font-display font-black text-zinc-950 tracking-tight uppercase mb-3">
+            Preguntas Frecuentes
           </h2>
-          <p className="text-base text-zinc-600">
-            Respuestas directas y transparentes sobre nuestras tarjetas inteligentes, páginas web y software a medida.
+          <p className="text-sm sm:text-base text-zinc-500">
+            Información y respuestas claras sobre nuestras tarjetas inteligentes, desarrollo web y software a medida.
           </p>
         </div>
 

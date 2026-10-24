@@ -35,7 +35,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Software & ERP', href: '#software' },
   { label: 'Proyectos', href: '#proyectos' },
   { label: 'Conoceme', href: '#conoceme' },
-  { label: 'FAQ', href: '#faq' },
 ];
 
 export const TRUST_PILLARS = [

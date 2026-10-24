@@ -23,40 +23,42 @@ export const Navbar: React.FC = () => {
             : 'bg-white/90 backdrop-blur-sm border-b border-zinc-100 py-3.5'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo with official logo image */}
-          <a
-            href="#"
-            className="flex items-center group focus:outline-none focus:ring-2 focus:ring-kiur-red rounded-lg py-1"
-            aria-label="Kiur Code Inicio"
-          >
-            <img
-              src="/logo.png"
-              alt="Kiur Code Logo"
-              className="h-11 sm:h-13 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
-            />
-          </a>
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 flex items-center justify-between gap-4">
+          {/* Logo pinned to the left */}
+          <div className="flex-shrink-0">
+            <a
+              href="#"
+              className="flex items-center group focus:outline-none focus:ring-2 focus:ring-kiur-red rounded-lg py-1"
+              aria-label="Kiur Code Inicio"
+            >
+              <img
+                src="/logo.png"
+                alt="Kiur Code Logo"
+                className="h-11 sm:h-13 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+              />
+            </a>
+          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8" aria-label="Navegación principal">
+          {/* Desktop Navigation in center with clear spacing */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 2xl:gap-10" aria-label="Navegación principal">
             {NAV_LINKS.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-xs uppercase tracking-[0.16em] font-bold text-zinc-600 hover:text-kiur-red transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-kiur-red after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-250 focus:outline-none focus:text-kiur-red"
+                className="text-xs uppercase tracking-[0.16em] font-bold text-zinc-600 hover:text-kiur-red transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-kiur-red after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-250 focus:outline-none focus:text-kiur-red whitespace-nowrap"
               >
                 {link.label}
               </a>
             ))}
           </nav>
 
-          {/* CTA & Mobile trigger */}
-          <div className="flex items-center gap-3">
+          {/* CTA & Mobile trigger pinned to the right */}
+          <div className="flex-shrink-0 flex items-center gap-3">
             <a
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase btn-red"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider uppercase btn-red shadow-sm hover:shadow-md transition-all"
             >
               <MessageCircle className="w-3.5 h-3.5" />
               <span>Contactar</span>
