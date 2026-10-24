@@ -19,21 +19,21 @@ export const Navbar: React.FC = () => {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 py-3 shadow-sm'
-            : 'bg-white/90 backdrop-blur-sm border-b border-zinc-100 py-4'
+            ? 'bg-white/95 backdrop-blur-md border-b border-zinc-200 py-2.5 shadow-sm'
+            : 'bg-white/90 backdrop-blur-sm border-b border-zinc-100 py-3.5'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo with official logo image */}
           <a
             href="#"
-            className="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-kiur-red rounded-lg"
+            className="flex items-center group focus:outline-none focus:ring-2 focus:ring-kiur-red rounded-lg py-1"
             aria-label="Kiur Code Inicio"
           >
             <img
               src="/logo.png"
               alt="Kiur Code Logo"
-              className="h-9 sm:h-10 w-auto object-contain"
+              className="h-11 sm:h-13 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
             />
           </a>
 
@@ -95,7 +95,7 @@ export const Navbar: React.FC = () => {
             <img
               src="/logo.png"
               alt="Kiur Code"
-              className="h-8 w-auto object-contain"
+              className="h-11 sm:h-12 w-auto object-contain"
             />
             <button
               onClick={() => setMobileMenuOpen(false)}

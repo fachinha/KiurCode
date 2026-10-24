@@ -12,11 +12,11 @@ export const Footer: React.FC = () => {
           {/* Brand Column (2 cols on lg) */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="bg-white rounded-xl p-1.5 inline-block shadow-sm">
+              <div className="bg-white rounded-xl p-2.5 sm:p-3 inline-block shadow-sm">
                 <img
                   src="/logo.png"
                   alt="Kiur Code Logo"
-                  className="h-8 w-auto object-contain"
+                  className="h-11 sm:h-12 w-auto object-contain"
                 />
               </div>
             </div>
