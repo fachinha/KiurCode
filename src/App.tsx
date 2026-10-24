@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { TrustValue } from './components/TrustValue';
 import { Solutions } from './components/Solutions';
 import { SmartCardsSection } from './components/SmartCardsSection';
 import { SoftwareDevSection } from './components/SoftwareDevSection';
@@ -21,7 +20,6 @@ export const App: React.FC = () => {
       {/* Main Content Sections */}
       <main className="flex-grow">
         <Hero />
-        <TrustValue />
         <Solutions />
         <SmartCardsSection />
         <SoftwareDevSection />

@@ -70,6 +70,11 @@ export const Footer: React.FC = () => {
               Navegación
             </h4>
             <ul className="space-y-2.5 text-xs">
+              <li>
+                <a href="#soluciones" className="hover:text-white transition-colors">
+                  Qué Vendemos
+                </a>
+              </li>
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} className="hover:text-white transition-colors">
