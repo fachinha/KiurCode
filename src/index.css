@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #05070d;
+  --color-surface: #0a0e17;
+  --color-surface-hover: #111726;
+  --color-accent: #00e5ff;
+  --color-accent-soft: rgba(0, 229, 255, 0.12);
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: #f1f5f9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #05070d;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+/* Grid & Aura backgrounds */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.aurora-cyan {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.14) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.aurora-blue {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.14) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(10, 14, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-panel-hover:hover {
+  border-color: rgba(0, 229, 255, 0.35);
+  box-shadow: 0 10px 40px -10px rgba(0, 229, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.glass-button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+}
+.glass-button:hover {
+  border-color: rgba(0, 229, 255, 0.5);
+  box-shadow: 0 8px 30px -5px rgba(0, 229, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
