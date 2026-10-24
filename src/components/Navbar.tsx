@@ -58,11 +58,11 @@ export const Navbar: React.FC = () => {
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider uppercase btn-red shadow-sm hover:shadow-md transition-all"
+              className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-bold tracking-wider uppercase btn-wa shadow-sm hover:shadow-md transition-all"
             >
-              <MessageCircle className="w-3.5 h-3.5" />
+              <MessageCircle className="w-3.5 h-3.5 wa-icon" />
               <span>Contactar</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+              <span className="dotlive" aria-hidden="true"></span>
             </a>
 
             {/* Mobile Hamburger Button */}
@@ -132,10 +132,11 @@ export const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
-            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider btn-red"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs font-bold uppercase tracking-wider btn-wa"
           >
-            <MessageCircle className="w-4 h-4" />
+            <MessageCircle className="w-4 h-4 wa-icon" />
             <span>Hablar por WhatsApp</span>
+            <span className="dotlive" aria-hidden="true"></span>
           </a>
         </div>
       </div>

@@ -73,7 +73,7 @@ export const SmartCardsSection: React.FC = () => {
       <div className="w-full mb-16 marquee-container py-4">
         <div
           ref={scrollContainerRef}
-          className="flex w-max marquee-content animate-marquee-slow hover:[animation-play-state:paused] gap-6 px-4"
+          className="flex w-max marquee-content animate-marquee-slow gap-6 px-4"
         >
           {infiniteCards.map((card, idx) => {
             const isCombo = card.type === 'combo';
@@ -97,7 +97,10 @@ export const SmartCardsSection: React.FC = () => {
                     src={card.image}
                     alt={`Tarjeta ${card.name}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
+                    loading={idx < 4 ? "eager" : "lazy"}
+                    decoding="async"
+                    width={600}
+                    height={450}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
 

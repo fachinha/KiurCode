@@ -17,6 +17,10 @@ export const AboutFounder: React.FC = () => {
                     src="/lucashartung.jpeg"
                     alt="Lucas Hartung - Fundador de Kiur Code"
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={1000}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
