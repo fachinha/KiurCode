@@ -6,7 +6,6 @@ import { Solutions } from './components/Solutions';
 import { SmartCardsSection } from './components/SmartCardsSection';
 import { WebDevSection } from './components/WebDevSection';
 import { ErpSection } from './components/ErpSection';
-import { HowWeWork } from './components/HowWeWork';
 import { Portfolio } from './components/Portfolio';
 import { AboutFounder } from './components/AboutFounder';
 import { FAQ } from './components/FAQ';
@@ -28,7 +27,6 @@ export const App: React.FC = () => {
         <SmartCardsSection />
         <WebDevSection />
         <ErpSection />
-        <HowWeWork />
         <Portfolio />
         <AboutFounder />
         <FAQ />

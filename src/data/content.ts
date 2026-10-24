@@ -33,7 +33,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: 'Tarjetas NFC', href: '#tarjetas' },
   { label: 'Desarrollo Web', href: '#web' },
   { label: 'Software & ERP', href: '#software' },
-  { label: 'Cómo trabajamos', href: '#proceso' },
   { label: 'Proyectos', href: '#proyectos' },
   { label: 'Conoceme', href: '#conoceme' },
   { label: 'FAQ', href: '#faq' },
