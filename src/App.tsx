@@ -15,7 +15,7 @@ import { WhatsAppFloating } from './components/WhatsAppFloating';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-kiur-black text-white flex flex-col selection:bg-kiur-red selection:text-white">
+    <div className="min-h-screen bg-white text-kiur-black flex flex-col selection:bg-kiur-red selection:text-white">
       {/* Top Fixed Navbar */}
       <Navbar />
 

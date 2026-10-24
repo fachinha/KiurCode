@@ -37,19 +37,19 @@ export const ErpSection: React.FC = () => {
   ];
 
   return (
-    <section id="software" className="py-24 bg-kiur-black relative border-t border-white/10 bg-grid-minimal">
+    <section id="software" className="py-24 bg-kiur-bgAlt relative border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono font-bold text-kiur-red uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-mono font-bold text-kiur-red uppercase tracking-wider mb-4 shadow-sm">
             <BarChart3 className="w-3.5 h-3.5" />
             <span>Software Empresarial a Medida</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight uppercase mb-6">
+          <h2 className="text-3xl sm:text-5xl font-display font-black text-zinc-950 tracking-tight uppercase mb-6">
             Sistemas ERP y <br />
             <span className="text-kiur-red">Software de Gestión</span>.
           </h2>
-          <p className="text-base sm:text-lg text-kiur-muted leading-relaxed">
+          <p className="text-base sm:text-lg text-zinc-600 leading-relaxed">
             Cuando tu comercio crece, las planillas de cálculo y los mensajes dispersos se convierten en cuellos de botella. Desarrollamos software modular que acompaña tus procesos y simplifica el día a día operativo.
           </p>
         </div>
@@ -58,72 +58,72 @@ export const ErpSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           {/* Left Column: Interactive System Mockup (7 Cols) */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl p-1 bg-gradient-to-br from-kiur-red/25 via-white/10 to-transparent shadow-2xl">
-              <div className="rounded-2xl bg-kiur-surface border border-white/10 p-5 sm:p-7">
+            <div className="rounded-3xl p-1 bg-gradient-to-br from-zinc-200 via-zinc-100 to-zinc-200 shadow-xl border border-zinc-200">
+              <div className="rounded-2xl bg-white border border-zinc-200 p-5 sm:p-7">
                 {/* Header */}
-                <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-6 text-xs text-kiur-muted">
+                <div className="flex items-center justify-between pb-4 border-b border-zinc-100 mb-6 text-xs text-zinc-500">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-kiur-red animate-pulse"></span>
-                    <span className="font-mono text-white font-bold uppercase tracking-wider text-[11px]">
+                    <span className="font-mono text-zinc-900 font-bold uppercase tracking-wider text-[11px]">
                       Panel de Gestión Interno · Bariloche
                     </span>
                   </div>
-                  <span className="px-2.5 py-0.5 rounded-full bg-white/5 text-kiur-red border border-kiur-red/25 font-mono text-[10px] font-bold">
+                  <span className="px-2.5 py-0.5 rounded-full bg-red-50 text-kiur-red border border-red-100 font-mono text-[10px] font-bold">
                     SISTEMA ACTIVO
                   </span>
                 </div>
 
                 {/* KPI Metrics Simulator */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                  <div className="p-3.5 rounded-xl bg-black/60 border border-white/5">
-                    <span className="text-[10px] font-mono text-kiur-muted uppercase block">Ventas Hoy</span>
-                    <span className="font-display font-black text-xl text-white mt-1 block">$ 418.500</span>
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase block">Ventas Hoy</span>
+                    <span className="font-display font-black text-xl text-zinc-950 mt-1 block">$ 418.500</span>
                     <span className="text-[10px] text-kiur-red font-bold block mt-0.5">+18% esta semana</span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-black/60 border border-white/5">
-                    <span className="text-[10px] font-mono text-kiur-muted uppercase block">Pedidos</span>
-                    <span className="font-display font-black text-xl text-white mt-1 block">24</span>
-                    <span className="text-[10px] text-kiur-muted block mt-0.5">En mostrador</span>
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase block">Pedidos</span>
+                    <span className="font-display font-black text-xl text-zinc-950 mt-1 block">24</span>
+                    <span className="text-[10px] text-zinc-500 block mt-0.5">En mostrador</span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-black/60 border border-white/5">
-                    <span className="text-[10px] font-mono text-kiur-muted uppercase block">Stock Mínimo</span>
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase block">Stock Mínimo</span>
                     <span className="font-display font-black text-xl text-kiur-red mt-1 block">3 ítems</span>
-                    <span className="text-[10px] text-kiur-muted block mt-0.5">Alerta reposición</span>
+                    <span className="text-[10px] text-zinc-500 block mt-0.5">Alerta reposición</span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-black/60 border border-white/5">
-                    <span className="text-[10px] font-mono text-kiur-muted uppercase block">Caja Diaria</span>
-                    <span className="font-display font-black text-xl text-white mt-1 block">Cuadrada</span>
-                    <span className="text-[10px] text-white/60 block mt-0.5">0 diferencias</span>
+                  <div className="p-3.5 rounded-xl bg-zinc-50 border border-zinc-200">
+                    <span className="text-[10px] font-mono text-zinc-500 uppercase block">Caja Diaria</span>
+                    <span className="font-display font-black text-xl text-zinc-950 mt-1 block">Cuadrada</span>
+                    <span className="text-[10px] text-zinc-500 block mt-0.5">0 diferencias</span>
                   </div>
                 </div>
 
                 {/* Operations workflow preview */}
-                <div className="rounded-xl bg-black/60 border border-white/5 p-4 space-y-3">
-                  <div className="flex items-center justify-between text-xs pb-2 border-b border-white/5">
-                    <span className="text-white font-bold uppercase tracking-wider text-[11px]">Movimientos de inventario</span>
+                <div className="rounded-xl bg-zinc-50 border border-zinc-200 p-4 space-y-3">
+                  <div className="flex items-center justify-between text-xs pb-2 border-b border-zinc-200">
+                    <span className="text-zinc-900 font-bold uppercase tracking-wider text-[11px]">Movimientos de inventario</span>
                     <span className="text-kiur-red font-mono text-[10px] font-bold">En tiempo real</span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs py-1">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-white"></div>
-                      <span className="text-white">Ingreso mercadería · Proveedor local</span>
+                      <div className="w-2 h-2 rounded-full bg-zinc-900"></div>
+                      <span className="text-zinc-800 font-medium">Ingreso mercadería · Proveedor local</span>
                     </div>
-                    <span className="font-mono text-white font-bold">+ 45 un.</span>
+                    <span className="font-mono text-zinc-900 font-bold">+ 45 un.</span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs py-1">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-kiur-red"></div>
-                      <span className="text-white">Venta mostrador #1084 · Pedido WhatsApp</span>
+                      <span className="text-zinc-800 font-medium">Venta mostrador #1084 · Pedido WhatsApp</span>
                     </div>
-                    <span className="font-mono text-kiur-muted">- 2 un.</span>
+                    <span className="font-mono text-zinc-500">- 2 un.</span>
                   </div>
 
                   <div className="flex items-center justify-between text-xs py-1">
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-kiur-red animate-pulse"></div>
-                      <span className="text-white">Alerta automática de stock mínimo</span>
+                      <span className="text-zinc-800 font-medium">Alerta automática de stock mínimo</span>
                     </div>
                     <span className="font-mono text-kiur-red font-bold">Notificado</span>
                   </div>
@@ -134,16 +134,16 @@ export const ErpSection: React.FC = () => {
 
           {/* Right Column: Strategic Proposition & Transparency (5 Cols) */}
           <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-2xl sm:text-3xl font-display font-black text-white uppercase">
+            <h3 className="text-2xl sm:text-3xl font-display font-black text-zinc-950 uppercase">
               Software que se adapta a tu negocio, no al revés.
             </h3>
-            <p className="text-sm text-kiur-muted leading-relaxed">
+            <p className="text-sm text-zinc-600 leading-relaxed">
               Los sistemas genéricos suelen ser costosos, excesivamente complejos o no contemplan cómo operás en el mostrador. En Kiur Code analizamos tu circuito de trabajo y construimos módulos a medida que resuelven exactamente lo que necesitás.
             </p>
 
             {/* Transparency Note */}
-            <div className="rounded-2xl bg-white/5 border border-white/10 p-5 text-xs text-kiur-muted space-y-2">
-              <div className="flex items-center gap-2 text-white font-bold uppercase tracking-wider">
+            <div className="rounded-2xl bg-white border border-zinc-200 p-5 text-xs text-zinc-600 space-y-2 shadow-sm">
+              <div className="flex items-center gap-2 text-zinc-900 font-bold uppercase tracking-wider">
                 <CheckCircle2 className="w-4 h-4 text-kiur-red shrink-0" />
                 <span>Desarrollo honesto y a medida</span>
               </div>
@@ -172,15 +172,15 @@ export const ErpSection: React.FC = () => {
           {erpCapabilities.map((cap) => (
             <div
               key={cap.title}
-              className="glass-panel glass-panel-hover rounded-2xl p-6 border border-white/10"
+              className="white-card rounded-2xl p-6"
             >
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+              <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-100 flex items-center justify-center mb-4">
                 {cap.icon}
               </div>
-              <h4 className="font-display font-black text-white text-base mb-2 uppercase">
+              <h4 className="font-display font-black text-zinc-950 text-base mb-2 uppercase">
                 {cap.title}
               </h4>
-              <p className="text-xs text-kiur-muted leading-relaxed">
+              <p className="text-xs text-zinc-600 leading-relaxed">
                 {cap.description}
               </p>
             </div>
