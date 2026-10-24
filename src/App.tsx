@@ -4,8 +4,7 @@ import { Hero } from './components/Hero';
 import { TrustValue } from './components/TrustValue';
 import { Solutions } from './components/Solutions';
 import { SmartCardsSection } from './components/SmartCardsSection';
-import { WebDevSection } from './components/WebDevSection';
-import { ErpSection } from './components/ErpSection';
+import { SoftwareDevSection } from './components/SoftwareDevSection';
 import { Portfolio } from './components/Portfolio';
 import { AboutFounder } from './components/AboutFounder';
 import { FAQ } from './components/FAQ';
@@ -25,8 +24,7 @@ export const App: React.FC = () => {
         <TrustValue />
         <Solutions />
         <SmartCardsSection />
-        <WebDevSection />
-        <ErpSection />
+        <SoftwareDevSection />
         <Portfolio />
         <AboutFounder />
         <Contact />

@@ -93,16 +93,16 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2.5 text-xs">
               <li>
                 <a href="#tarjetas" className="hover:text-white transition-colors">
-                  Tarjetas NFC Google
+                  Tarjetas NFC Inteligentes
                 </a>
               </li>
               <li>
-                <a href="#web" className="hover:text-white transition-colors">
+                <a href="#software" className="hover:text-white transition-colors">
                   Páginas con Catálogo
                 </a>
               </li>
               <li>
-                <a href="#web" className="hover:text-white transition-colors">
+                <a href="#software" className="hover:text-white transition-colors">
                   Pedidos por WhatsApp
                 </a>
               </li>

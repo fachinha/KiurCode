@@ -17,17 +17,7 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative pt-32 pb-16 bg-white overflow-hidden bg-grid-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-        {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 mb-8 shadow-sm">
-          <span className="w-2 h-2 rounded-full bg-kiur-red animate-pulse"></span>
-          <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-zinc-900">
-            Soluciones Digitales · Bariloche
-          </span>
-          <span className="text-zinc-300">|</span>
-          <span className="text-xs text-zinc-500 font-medium hidden sm:inline">
-            Tecnología para Comercios
-          </span>
-        </div>
+
 
         {/* Minimalist Bold Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-zinc-950 max-w-5xl leading-[1.05] mb-6 uppercase">
