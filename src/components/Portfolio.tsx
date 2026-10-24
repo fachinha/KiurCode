@@ -4,20 +4,20 @@ import { PROJECTS } from '../data/content';
 
 export const Portfolio: React.FC = () => {
   return (
-    <section id="proyectos" className="py-24 px-4 sm:px-6 lg:px-8 bg-kiur-surface relative border-t border-white/5">
-      <div className="max-w-7xl mx-auto">
+    <section id="proyectos" className="py-24 bg-kiur-black relative border-t border-white/10 bg-grid-minimal">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono font-bold text-kiur-cyan uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono font-bold uppercase tracking-[0.2em] text-kiur-red mb-3">
               <FolderGit2 className="w-3.5 h-3.5" />
-              <span>Trabajos &amp; Desarrollos Reales</span>
+              <span>Casos &amp; Trabajos Reales</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-extrabold text-white tracking-tight">
-              Proyectos construidos con foco en resultados.
+            <h2 className="text-3xl sm:text-5xl font-display font-black text-white tracking-tight uppercase">
+              Proyectos en Bariloche.
             </h2>
           </div>
-          <p className="text-sm sm:text-base text-kiur-textMuted max-w-md">
-            Mostramos soluciones tangibles implementadas para comercios locales. Sin clientes ficticios ni métricas inventadas: tecnología aplicada a problemas reales.
+          <p className="text-sm sm:text-base text-kiur-muted max-w-md leading-relaxed">
+            Sin clientes ficticios ni métricas inventadas: soluciones tangibles para comercios locales de Bariloche y la Patagonia.
           </p>
         </div>
 
@@ -26,7 +26,7 @@ export const Portfolio: React.FC = () => {
           {PROJECTS.map((project) => (
             <div
               key={project.id}
-              className="glass-panel glass-panel-hover rounded-2xl overflow-hidden border border-white/10 flex flex-col justify-between group"
+              className="glass-panel glass-panel-hover rounded-3xl overflow-hidden border border-white/10 flex flex-col justify-between group"
             >
               <div>
                 {/* Media Image Container */}
@@ -37,15 +37,15 @@ export const Portfolio: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
                   {/* Top Badges */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className="text-[11px] font-mono uppercase px-2.5 py-1 rounded-full bg-kiur-surface/90 backdrop-blur-md text-kiur-cyan border border-kiur-cyan/30 font-semibold">
+                    <span className="text-[10px] font-mono uppercase px-3 py-1 rounded-full bg-kiur-black/90 backdrop-blur-md text-white border border-white/15 font-bold">
                       {project.category}
                     </span>
-                    <span className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-white/90 border border-white/10 flex items-center gap-1.5">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-kiur-red text-white flex items-center gap-1.5 shadow-sm">
+                      <CheckCircle2 className="w-3.5 h-3.5" />
                       {project.verifiedBadge}
                     </span>
                   </div>
@@ -53,13 +53,13 @@ export const Portfolio: React.FC = () => {
 
                 {/* Content */}
                 <div className="p-6 sm:p-8">
-                  <h3 className="font-display font-bold text-2xl text-white mb-2 group-hover:text-kiur-cyan transition-colors">
+                  <h3 className="font-display font-black text-2xl text-white uppercase mb-1 group-hover:text-kiur-red transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-xs font-semibold text-kiur-cyan uppercase tracking-wider mb-4">
+                  <p className="text-xs font-mono font-bold text-kiur-red uppercase tracking-wider mb-4">
                     {project.subtitle}
                   </p>
-                  <p className="text-sm text-kiur-textMuted leading-relaxed mb-6">
+                  <p className="text-sm text-kiur-muted leading-relaxed mb-6">
                     {project.description}
                   </p>
 
@@ -68,7 +68,7 @@ export const Portfolio: React.FC = () => {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/5 border border-white/5 text-kiur-textMuted"
+                        className="text-[10px] font-mono font-bold uppercase px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-kiur-muted"
                       >
                         {tag}
                       </span>
@@ -84,7 +84,7 @@ export const Portfolio: React.FC = () => {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-kiur-cyan hover:text-white transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-kiur-red hover:text-white transition-colors"
                   >
                     <span>Ver ficha comercial / referencia</span>
                     <ExternalLink className="w-3.5 h-3.5" />
