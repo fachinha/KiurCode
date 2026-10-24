@@ -65,7 +65,7 @@ export const SMART_CARD_OPTIONS: SmartCardOption[] = [
     description: 'El cliente acerca su celular y se abre directo la ventana para dejarte 5 estrellas.',
     features: ['Chip NFC de alta velocidad', 'QR de respaldo grabado', 'Enlace directo a 5 estrellas', 'Personalizada con tu marca'],
     waMessage: 'Hola Lucas, quiero pedir la Tarjeta Inteligente NFC de Google ($20.000) para mi negocio.',
-    image: '/cards/card-1.jpg',
+    image: '/cards/google.jpeg',
   },
   {
     id: 'instagram',
@@ -77,19 +77,7 @@ export const SMART_CARD_OPTIONS: SmartCardOption[] = [
     description: 'Sumá seguidores reales y mostrá tus publicaciones en tu mostrador al instante.',
     features: ['Abre tu perfil sin buscar nombres', 'Chip NFC + QR de respaldo', 'Ideal para gastronómicos y comercios', 'Personalizada con tu marca'],
     waMessage: 'Hola Lucas, quiero pedir la Tarjeta Inteligente NFC de Instagram ($20.000) para mi negocio.',
-    image: '/cards/card-2.jpg',
-  },
-  {
-    id: 'facebook',
-    name: 'Facebook',
-    type: 'individual',
-    platform: 'Página / Fanpage de Facebook',
-    price: 20000,
-    formattedPrice: '$20.000',
-    description: 'Conectá clientes directos a tu página comercial, promociones, fotos y comunidad.',
-    features: ['Acceso directo a tu Fanpage', 'Chip NFC + QR de respaldo', 'Sin fricción para el usuario', 'Personalizada con tu marca'],
-    waMessage: 'Hola Lucas, quiero pedir la Tarjeta Inteligente NFC de Facebook ($20.000) para mi negocio.',
-    image: '/cards/card-3.jpg',
+    image: '/cards/instagram.jpeg',
   },
   {
     id: 'whatsapp',
@@ -101,7 +89,19 @@ export const SMART_CARD_OPTIONS: SmartCardOption[] = [
     description: 'Iniciá un chat de WhatsApp con tus clientes sin que tengan que agendar tu número.',
     features: ['Abre chat con saludo predefinido', 'Ideal para consultas y pedidos', 'Chip NFC + QR de respaldo', 'Personalizada con tu marca'],
     waMessage: 'Hola Lucas, quiero pedir la Tarjeta Inteligente NFC de WhatsApp ($20.000) para mi negocio.',
-    image: '/cards/card-4.jpg',
+    image: '/cards/whatsapp.jpeg',
+  },
+  {
+    id: 'facebook',
+    name: 'Facebook',
+    type: 'individual',
+    platform: 'Página / Fanpage de Facebook',
+    price: 20000,
+    formattedPrice: '$20.000',
+    description: 'Conectá clientes directos a tu página comercial, promociones, fotos y comunidad.',
+    features: ['Acceso directo a tu Fanpage', 'Chip NFC + QR de respaldo', 'Sin fricción para el usuario', 'Personalizada con tu marca'],
+    waMessage: 'Hola Lucas, quiero pedir la Tarjeta Inteligente NFC de Facebook ($20.000) para mi negocio.',
+    image: '/cards/facebook.jpeg',
   },
   {
     id: 'combo-x2',
@@ -118,7 +118,7 @@ export const SMART_CARD_OPTIONS: SmartCardOption[] = [
     description: 'Elegí 2 tarjetas (ej. Google + Instagram o 2 de Google para dos puestos de atención).',
     features: ['2 tarjetas configuradas y listas', 'Combiná las redes que quieras', 'Logo de tu negocio en ambas', 'Ahorro de $5.000'],
     waMessage: 'Hola Lucas, quiero pedir el Combo x2 de Tarjetas Inteligentes NFC ($35.000 con $5.000 de ahorro).',
-    image: '/cards/card-5.jpg',
+    image: '/cards/combox2.jpeg',
   },
   {
     id: 'combo-x3',
@@ -135,7 +135,7 @@ export const SMART_CARD_OPTIONS: SmartCardOption[] = [
     description: 'La opción más elegida: cubrí Google Maps, Instagram y WhatsApp, o 3 mesas / mostradores.',
     features: ['3 tarjetas personalizadas', 'Cubre todo tu ecosistema comercial', 'Logo de tu negocio en todas', 'Ahorro de $10.000'],
     waMessage: 'Hola Lucas, quiero pedir el Combo x3 de Tarjetas Inteligentes NFC ($50.000 con $10.000 de ahorro).',
-    image: '/cards/card-6.jpg',
+    image: '/cards/combox3.jpeg',
   },
   {
     id: 'combo-x4',
@@ -152,7 +152,7 @@ export const SMART_CARD_OPTIONS: SmartCardOption[] = [
     description: 'Pack completo para negocios con varias cajas, salones o para tener el kit total (Google + IG + FB + WA).',
     features: ['4 tarjetas listas para usar', 'Cobertura completa para tu local', 'Logo y diseño personalizado', 'Ahorro de $15.000'],
     waMessage: 'Hola Lucas, quiero pedir el Combo x4 de Tarjetas Inteligentes NFC ($65.000 con $15.000 de ahorro).',
-    image: '/cards/card-7.jpg',
+    image: '/cards/combox4.jpeg',
   },
 ];
 
