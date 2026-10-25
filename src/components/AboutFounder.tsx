@@ -24,13 +24,6 @@ export const AboutFounder: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-                  {/* Top Location Pill */}
-                  <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200 text-[10px] font-mono text-zinc-950 font-bold uppercase tracking-wider shadow-sm">
-                      Kiur Code · Bariloche
-                    </span>
-                  </div>
-
                   {/* Name and Title overlay at the bottom of the photo */}
                   <div className="absolute bottom-4 left-4 right-4 text-white">
                     <h3 className="font-display font-black text-2xl uppercase tracking-tight text-white drop-shadow-sm">
