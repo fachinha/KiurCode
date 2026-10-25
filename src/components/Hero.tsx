@@ -1,8 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, MessageCircle } from 'lucide-react';
 import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../data/content';
 
+const ROTATING_WORDS = ['Vender', 'Crecer', 'Escalar'];
+
 export const Hero: React.FC = () => {
+  const [activeWordIdx, setActiveWordIdx] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+    const interval = setInterval(() => {
+      setActiveWordIdx((prev) => (prev + 1) % ROTATING_WORDS.length);
+    }, 2800);
+    return () => clearInterval(interval);
+  }, []);
+
   const tickerItems = [
     'Tarjetas Inteligentes NFC',
     'Reseñas de Google en 1 Toque',
@@ -26,7 +40,20 @@ export const Hero: React.FC = () => {
         {/* Minimalist Bold Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-zinc-950 max-w-5xl leading-[1.05] mb-8 sm:mb-10 uppercase">
           Tu Negocio Puede <br className="hidden sm:block" />
-          <span className="text-kiur-red">Vender Más</span>.
+          <span className="text-kiur-red">
+            <span className="hero-swap" aria-label="Vender, Crecer, Escalar">
+              {ROTATING_WORDS.map((word, idx) => (
+                <span
+                  key={word}
+                  className={`hero-word ${idx === activeWordIdx ? 'on' : ''}`}
+                  aria-hidden={idx !== activeWordIdx}
+                >
+                  {word}
+                </span>
+              ))}
+            </span>{' '}
+            Más.
+          </span>
         </h1>
 
         {/* CTA Buttons */}

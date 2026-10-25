@@ -239,6 +239,48 @@ body {
   }
 }
 
+/* Palabras rotativas del Hero (estilo Algoritmia con subrayado dinámico) */
+.hero-swap {
+  display: inline-grid;
+  vertical-align: bottom;
+  justify-items: center;
+  position: relative;
+}
+
+.hero-word {
+  grid-area: 1 / 1;
+  position: relative;
+  opacity: 0;
+  transform: translateY(0.24em);
+  transition: opacity 0.45s cubic-bezier(0.2, 0.75, 0.2, 1), transform 0.45s cubic-bezier(0.2, 0.75, 0.2, 1);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.hero-word.on {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.hero-word::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.04em;
+  height: 0.08em;
+  background: #e52b2b;
+  border-radius: 999px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.65s cubic-bezier(0.2, 0.75, 0.2, 1) 0.15s;
+}
+
+.hero-word.on::after {
+  transform: scaleX(1);
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
