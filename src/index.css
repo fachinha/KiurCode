@@ -122,6 +122,20 @@ body {
   backface-visibility: hidden;
 }
 
+/* ================= Barra de progreso superior en rojo estilo Algoritmia ================= */
+#prog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  z-index: 100;
+  background: #e52b2b;
+  box-shadow: 0 0 10px rgba(229, 43, 43, 0.8), 0 0 20px rgba(229, 43, 43, 0.4);
+  pointer-events: none;
+  transition: width 0.08s ease-out;
+}
+
 /* ================= Botón Contactar animado estilo Algoritmia ================= */
 .btn-wa {
   position: relative;

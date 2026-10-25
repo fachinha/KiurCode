@@ -16,13 +16,15 @@ export interface ServiceItem {
 
 export interface ProjectItem {
   id: string;
+  name: string;
+  short: string;
   category: string;
-  title: string;
   subtitle: string;
   description: string;
+  domain: string;
+  liveUrl: string;
   tags: string[];
-  image: string;
-  liveUrl?: string;
+  features: string[];
   verifiedBadge: string;
 }
 
