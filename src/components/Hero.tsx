@@ -20,19 +20,10 @@ export const Hero: React.FC = () => {
 
 
         {/* Minimalist Bold Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-zinc-950 max-w-5xl leading-[1.05] mb-6 uppercase">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-zinc-950 max-w-5xl leading-[1.05] mb-10 uppercase">
           Tu Negocio Puede <br className="hidden sm:block" />
           <span className="text-kiur-red">Vender Más</span>.
         </h1>
-
-        <p className="text-xs sm:text-sm md:text-base font-bold uppercase tracking-[0.2em] text-zinc-500 max-w-2xl mb-6">
-          Tecnología útil para comercios locales. Tarjetas de reseñas inteligentes, webs con pedidos a WhatsApp y software a medida.
-        </p>
-
-        {/* Commercial Description */}
-        <p className="text-base sm:text-lg text-zinc-600 max-w-2xl leading-relaxed mb-10 font-normal">
-          Te ayudamos a eliminar la fricción con tus clientes: capturá reseñas de 5 estrellas en tu mostrador, vendé online sin pagar comisiones abusivas y digitalizá tu gestión.
-        </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
@@ -57,35 +48,35 @@ export const Hero: React.FC = () => {
 
         {/* Proof / Results Bar (Hornerito / Algoritmia style on light surface) */}
         <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-white border border-zinc-200 shadow-sm mb-14 text-center">
-          <div className="p-3">
-            <span className="font-display font-black text-2xl sm:text-3xl text-zinc-950 block tracking-tight">
-              1 Toque
+          <div className="p-3 flex flex-col justify-center">
+            <span className="font-display font-black text-base sm:text-lg text-zinc-950 block tracking-tight uppercase">
+              Tarjetas NFC
             </span>
             <span className="text-xs text-zinc-500 font-medium mt-1 block">
-              Para calificar en Google
+              Inteligentes
             </span>
           </div>
 
-          <div className="p-3 border-l border-zinc-100">
-            <span className="font-display font-black text-2xl sm:text-3xl text-kiur-red block tracking-tight">
-              0%
+          <div className="p-3 border-l border-zinc-100 flex flex-col justify-center">
+            <span className="font-display font-black text-base sm:text-lg text-kiur-red block tracking-tight uppercase">
+              Páginas Web
             </span>
             <span className="text-xs text-zinc-500 font-medium mt-1 block">
-              Comisiones por venta
+              Comerciales
             </span>
           </div>
 
-          <div className="p-3 border-l-0 md:border-l border-zinc-100">
-            <span className="font-display font-black text-2xl sm:text-3xl text-zinc-950 block tracking-tight">
-              100%
+          <div className="p-3 border-l-0 md:border-l border-zinc-100 flex flex-col justify-center">
+            <span className="font-display font-black text-base sm:text-lg text-zinc-950 block tracking-tight uppercase">
+              Aplicaciones ERP
             </span>
             <span className="text-xs text-zinc-500 font-medium mt-1 block">
-              Código propio a medida
+              A medida
             </span>
           </div>
 
-          <div className="p-3 border-l border-zinc-100">
-            <span className="font-display font-black text-2xl sm:text-3xl text-zinc-950 block tracking-tight">
+          <div className="p-3 border-l border-zinc-100 flex flex-col justify-center">
+            <span className="font-display font-black text-base sm:text-lg text-zinc-950 block tracking-tight uppercase">
               Bariloche
             </span>
             <span className="text-xs text-zinc-500 font-medium mt-1 block">

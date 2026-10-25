@@ -102,18 +102,18 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#software" className="hover:text-white transition-colors">
+                <a href="#proyectos" className="hover:text-white transition-colors">
                   Páginas con Catálogo
                 </a>
               </li>
               <li>
-                <a href="#software" className="hover:text-white transition-colors">
+                <a href="#proyectos" className="hover:text-white transition-colors">
                   Pedidos por WhatsApp
                 </a>
               </li>
               <li>
-                <a href="#software" className="hover:text-white transition-colors">
-                  Control de Stock &amp; ERP
+                <a href="#soluciones" className="hover:text-white transition-colors">
+                  Sistemas &amp; ERP
                 </a>
               </li>
             </ul>
