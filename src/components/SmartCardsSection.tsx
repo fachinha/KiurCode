@@ -1,23 +1,12 @@
-import React, { useState, useRef } from 'react';
-import { MessageCircle, ArrowRight, ShieldCheck, Zap, QrCode, Star, Eye, Check, ChevronLeft, ChevronRight, Layers } from 'lucide-react';
+import React, { useState } from 'react';
+import { MessageCircle, ArrowRight, ShieldCheck, Zap, QrCode, Star, Eye, Check, Layers } from 'lucide-react';
 import { SMART_CARD_OPTIONS, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../data/content';
 
 export const SmartCardsSection: React.FC = () => {
   const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   // Duplicating the 7 card options to create a seamless infinite marquee loop
   const infiniteCards = [...SMART_CARD_OPTIONS, ...SMART_CARD_OPTIONS];
-
-  const handleManualScroll = (direction: 'left' | 'right') => {
-    if (scrollContainerRef.current) {
-      const scrollAmount = 380;
-      scrollContainerRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
 
   return (
     <section id="tarjetas" className="py-24 bg-kiur-bgAlt relative overflow-hidden border-b border-zinc-200">
@@ -34,27 +23,8 @@ export const SmartCardsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* Controls & CTA */}
+          {/* CTA */}
           <div className="shrink-0 flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-2 mr-2">
-              <button
-                type="button"
-                onClick={() => handleManualScroll('left')}
-                className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-700 hover:text-black hover:border-zinc-400 shadow-sm transition-all cursor-pointer"
-                aria-label="Desplazar hacia la izquierda"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                type="button"
-                onClick={() => handleManualScroll('right')}
-                className="w-10 h-10 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-zinc-700 hover:text-black hover:border-zinc-400 shadow-sm transition-all cursor-pointer"
-                aria-label="Desplazar hacia la derecha"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            </div>
-
             <a
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.cards)}
               target="_blank"
@@ -72,7 +42,6 @@ export const SmartCardsSection: React.FC = () => {
       {/* CONTINUOUS HORIZONTAL CAROUSEL WITH FULL PRICING, SAVINGS & WHATSAPP BUTTONS */}
       <div className="w-full mb-16 marquee-container py-4">
         <div
-          ref={scrollContainerRef}
           className="flex w-max marquee-content animate-marquee-slow gap-6 px-4"
         >
           {infiniteCards.map((card, idx) => {

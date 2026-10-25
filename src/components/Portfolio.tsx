@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Monitor, Smartphone, ExternalLink, Lock, CheckCircle2, RefreshCw, Check } from 'lucide-react';
-import { PROJECTS, getWhatsAppUrl } from '../data/content';
+import { Monitor, Smartphone, ExternalLink, Lock, RefreshCw } from 'lucide-react';
+import { PROJECTS } from '../data/content';
 
 export const Portfolio: React.FC = () => {
   const [selectedIdx, setSelectedIdx] = useState(0);
@@ -133,7 +133,7 @@ export const Portfolio: React.FC = () => {
         </div>
 
         {/* Interactive Browser Frame (Algoritmia style) */}
-        <div className="relative rounded-3xl bg-zinc-950 border border-zinc-800 shadow-2xl overflow-hidden mb-12">
+        <div className="relative rounded-3xl bg-zinc-950 border border-zinc-800 shadow-2xl overflow-hidden">
           {/* Chrome Bar (macOS dots & URL) */}
           <div className="flex items-center justify-between gap-4 px-4 sm:px-6 py-3.5 bg-zinc-900/90 border-b border-zinc-800 backdrop-blur-md">
             {/* 3 Window traffic light dots */}
@@ -208,74 +208,6 @@ export const Portfolio: React.FC = () => {
                 <div className="w-28 h-1 rounded-full bg-zinc-700/60 mt-1.5" />
               </div>
             )}
-          </div>
-        </div>
-
-        {/* Project Editorial Detail Card */}
-        <div className="rounded-3xl p-6 sm:p-10 bg-zinc-50 border border-zinc-200 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-          <div className="max-w-2xl space-y-4">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-xs font-mono uppercase font-bold text-kiur-red">
-                {activeProject.category}
-              </span>
-              <span className="text-zinc-300">·</span>
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
-                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                {activeProject.verifiedBadge}
-              </span>
-            </div>
-
-            <h3 className="text-2xl sm:text-3xl font-display font-black text-zinc-950 uppercase">
-              {activeProject.name}
-            </h3>
-
-            <p className="text-sm sm:text-base text-zinc-600 leading-relaxed">
-              {activeProject.description}
-            </p>
-
-            {/* Bullet features */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
-              {activeProject.features.map((feat, fIdx) => (
-                <li key={fIdx} className="flex items-center gap-2 text-xs sm:text-sm text-zinc-700">
-                  <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>{feat}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 pt-2">
-              {activeProject.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[11px] font-mono font-bold uppercase px-3 py-1 rounded-full bg-white border border-zinc-200 text-zinc-700 shadow-2xs"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* WhatsApp CTA for a similar site */}
-          <div className="shrink-0 flex flex-col sm:flex-row lg:flex-col gap-3">
-            <a
-              href={getWhatsAppUrl(`Hola Lucas, vi la web de ${activeProject.name} en Kiur Code y quiero consultar por una similar para mi negocio.`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider btn-wa shadow-md text-center"
-            >
-              <span>Quiero una web así</span>
-              <ExternalLink className="w-4 h-4" />
-            </a>
-
-            <a
-              href={activeProject.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white hover:bg-zinc-100 text-zinc-900 border border-zinc-300 shadow-sm transition-all text-center"
-            >
-              <span>Abrir {activeProject.domain}</span>
-            </a>
           </div>
         </div>
       </div>

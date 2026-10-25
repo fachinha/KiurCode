@@ -29,6 +29,7 @@ export const WHATSAPP_MESSAGES = {
 };
 
 export const NAV_LINKS: NavLink[] = [
+  { label: 'Servicios', href: '#soluciones' },
   { label: 'Tarjetas NFC', href: '#tarjetas' },
   { label: 'Proyectos', href: '#proyectos' },
   { label: 'Conoceme', href: '#conoceme' },
