@@ -15,8 +15,8 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative pt-32 pb-16 bg-white overflow-hidden bg-grid-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
+    <section className="relative min-h-screen min-h-[100svh] flex flex-col justify-between pt-36 sm:pt-44 lg:pt-48 pb-0 bg-white overflow-hidden bg-grid-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center my-auto py-6 sm:py-8">
 
 
         {/* Minimalist Bold Headline */}
@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Infinite Running Marquee Band (High-contrast brutalist strip) */}
-      <div className="w-full py-4 bg-zinc-950 border-y border-zinc-900 marquee-container">
+      <div className="w-full py-4 bg-zinc-950 border-y border-zinc-900 marquee-container mt-auto">
         <div className="flex w-max marquee-content animate-marquee">
           {[...tickerItems, ...tickerItems].map((item, idx) => (
             <div key={idx} className="flex items-center gap-6 px-6 text-xs uppercase tracking-[0.2em] font-bold text-white whitespace-nowrap">
