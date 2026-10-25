@@ -228,28 +228,6 @@ export const SmartCardsSection: React.FC = () => {
             </p>
           </div>
         </div>
-
-        {/* Bottom Consultative Bar */}
-        <div className="mt-10 p-6 rounded-2xl bg-white border border-zinc-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <span className="font-display font-black text-zinc-950 text-base uppercase block">
-              ¿Tenés dudas sobre cuál combinación de tarjetas elegir para tu local?
-            </span>
-            <span className="text-xs text-zinc-500">
-              Escribinos por WhatsApp y te asesoramos al instante desde Bariloche.
-            </span>
-          </div>
-
-          <a
-            href={getWhatsAppUrl(WHATSAPP_MESSAGES.cards)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider btn-red shrink-0"
-          >
-            <MessageCircle className="w-4 h-4" />
-            <span>Consultar con Lucas</span>
-          </a>
-        </div>
       </div>
 
       {/* Image Modal Lightbox */}

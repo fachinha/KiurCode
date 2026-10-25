@@ -8,9 +8,6 @@ export const Solutions: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-50 border border-red-100 text-xs font-mono font-bold uppercase tracking-[0.2em] text-kiur-red mb-3">
-            <span>Servicios &amp; Productos</span>
-          </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-zinc-950 tracking-tight uppercase mb-4">
             Qué vendemos <br />
             <span className="text-kiur-red">para hacer crecer tu comercio</span>.
