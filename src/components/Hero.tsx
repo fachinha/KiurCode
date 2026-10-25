@@ -15,8 +15,8 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen min-h-[100svh] flex flex-col justify-between pt-36 sm:pt-44 lg:pt-48 pb-0 bg-white overflow-hidden bg-grid-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center my-auto py-6 sm:py-8">
+    <section className="relative min-h-screen min-h-[100svh] flex flex-col justify-between pt-24 sm:pt-28 pb-0 bg-white overflow-hidden bg-grid-light">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center mt-4 sm:mt-6 mb-auto pb-8">
 
 
         {/* Minimalist Bold Headline */}
