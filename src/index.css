@@ -10,6 +10,22 @@
   --color-accent-hover: #cc2222;
   --color-accent-soft: rgba(229, 43, 43, 0.08);
   --color-border: #e4e4e7;
+  --nav-height: 72px;
+  --hero-equal-gap: clamp(48px, 8vh, 64px);
+}
+
+@media (min-width: 768px) {
+  :root {
+    --nav-height: 84px;
+    --hero-equal-gap: clamp(70px, 11vh, 105px);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --nav-height: 92px;
+    --hero-equal-gap: clamp(85px, 14vh, 145px);
+  }
 }
 
 html {

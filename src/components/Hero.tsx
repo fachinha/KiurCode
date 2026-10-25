@@ -15,18 +15,22 @@ export const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen min-h-[100svh] flex flex-col justify-between pt-24 sm:pt-28 pb-0 bg-white overflow-hidden bg-grid-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center mt-4 sm:mt-6 mb-auto pb-8">
-
-
+    <section className="relative bg-white overflow-hidden bg-grid-light">
+      <div 
+        style={{
+          paddingTop: 'calc(var(--nav-height) + var(--hero-equal-gap))',
+          paddingBottom: 'var(--hero-equal-gap)',
+        }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center"
+      >
         {/* Minimalist Bold Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-zinc-950 max-w-5xl leading-[1.05] mb-10 uppercase">
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-display font-black tracking-tight text-zinc-950 max-w-5xl leading-[1.05] mb-8 sm:mb-10 uppercase">
           Tu Negocio Puede <br className="hidden sm:block" />
           <span className="text-kiur-red">Vender Más</span>.
         </h1>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-8 sm:mb-10">
           <a
             href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)}
             target="_blank"
@@ -47,7 +51,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Proof / Results Bar (Hornerito / Algoritmia style on light surface) */}
-        <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-white border border-zinc-200 shadow-sm mb-14 text-center">
+        <div className="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-4 p-5 rounded-2xl bg-white border border-zinc-200 shadow-sm text-center">
           <div className="p-3 flex flex-col justify-center">
             <span className="font-display font-black text-base sm:text-lg text-zinc-950 block tracking-tight uppercase">
               Tarjetas NFC
@@ -87,7 +91,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Infinite Running Marquee Band (High-contrast brutalist strip) */}
-      <div className="w-full py-4 bg-zinc-950 border-y border-zinc-900 marquee-container mt-auto">
+      <div className="w-full py-4 bg-zinc-950 border-y border-zinc-900 marquee-container">
         <div className="flex w-max marquee-content animate-marquee">
           {[...tickerItems, ...tickerItems].map((item, idx) => (
             <div key={idx} className="flex items-center gap-6 px-6 text-xs uppercase tracking-[0.2em] font-bold text-white whitespace-nowrap">

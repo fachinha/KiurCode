@@ -4,7 +4,11 @@ import { getWhatsAppUrl, WHATSAPP_MESSAGES } from '../data/content';
 
 export const Solutions: React.FC = () => {
   return (
-    <section id="soluciones" className="pt-36 sm:pt-44 lg:pt-48 pb-24 bg-white relative border-b border-zinc-200">
+    <section 
+      id="soluciones" 
+      style={{ paddingTop: 'var(--hero-equal-gap)' }}
+      className="pb-24 bg-white relative border-b border-zinc-200 scroll-mt-24"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
