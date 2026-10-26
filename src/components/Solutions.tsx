@@ -58,10 +58,10 @@ export const Solutions: React.FC = () => {
                   {/* Piece 1: Tarjetas NFC */}
                   <div className="cb-pz">
                     <span className="cb-ic">
-                      <Smartphone className="w-5 h-5" />
+                      <Smartphone className="w-5 h-5 text-white" />
                     </span>
-                    <b>Tarjetas NFC inteligentes</b>
-                    <small>Reseñas 5★ en Google Maps</small>
+                    <b className="text-white">Tarjetas NFC inteligentes</b>
+                    <small className="text-white">Reseñas 5★ en Google Maps</small>
                   </div>
 
                   <i className="cb-mas">+</i>
@@ -69,10 +69,10 @@ export const Solutions: React.FC = () => {
                   {/* Piece 2: Panel CRM */}
                   <div className="cb-pz">
                     <span className="cb-ic">
-                      <LayoutDashboard className="w-5 h-5" />
+                      <LayoutDashboard className="w-5 h-5 text-white" />
                     </span>
-                    <b>Panel CRM</b>
-                    <small>Cada cliente y venta ordenados</small>
+                    <b className="text-white">Panel CRM</b>
+                    <small className="text-white">Cada cliente y venta ordenados</small>
                   </div>
 
                   <i className="cb-mas">+</i>
@@ -80,10 +80,10 @@ export const Solutions: React.FC = () => {
                   {/* Piece 3: Web profesional */}
                   <div className="cb-pz">
                     <span className="cb-ic">
-                      <Globe className="w-5 h-5" />
+                      <Globe className="w-5 h-5 text-white" />
                     </span>
-                    <b>Web profesional</b>
-                    <small>Tu vidriera con pedidos online</small>
+                    <b className="text-white">Web profesional</b>
+                    <small className="text-white">Tu vidriera con pedidos online</small>
                   </div>
 
                   <i className="cb-mas cb-igual">=</i>
@@ -91,10 +91,10 @@ export const Solutions: React.FC = () => {
                   {/* Piece 4: Todo conectado */}
                   <div className="cb-pz cb-todo">
                     <span className="cb-ic">
-                      <Link2 className="w-5 h-5" />
+                      <Link2 className="w-5 h-5 text-white" />
                     </span>
-                    <b>Todo conectado</b>
-                    <small>Con tu propia marca</small>
+                    <b className="text-white">Todo conectado</b>
+                    <small className="text-white">Con tu propia marca</small>
                   </div>
                 </div>
               </div>
