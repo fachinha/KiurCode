@@ -16,7 +16,7 @@ export const Solutions: React.FC = () => {
             <span className="lbl-servicios">Servicios</span>
           </div>
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-display font-black text-zinc-950 tracking-tight uppercase mb-3">
-            Todo para vender más, <span className="text-zinc-400">en un solo lugar.</span>
+            Todo para vender más, <span className="text-kiur-red">en un solo lugar.</span>
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 leading-relaxed max-w-2xl mx-auto">
             Herramientas digitales completas y conectadas para hacer crecer tu comercio en Bariloche y ordenar tus ventas.
