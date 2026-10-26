@@ -33,10 +33,10 @@ export const Solutions: React.FC = () => {
               <div className="lg:col-span-5 flex flex-col items-start gap-4">
                 <span className="tagx">Combo</span>
                 <h3 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight uppercase leading-[1.1]">
-                  Tu negocio atendiendo y vendiendo solo, <span className="text-zinc-400">las 24 horas.</span>
+                  Tarjeta NFC Inteligente, Web Profesional <span className="text-zinc-400">y Panel CRM.</span>
                 </h3>
                 <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                  Las tarjetas captan, la web vende y el panel ordena. Todo conectado bajo tu propia marca y sin comisiones.
+                  Sumá reseñas de 5★ en Google Maps en tu mostrador, recibí pedidos directos a WhatsApp con tu catálogo web y organizá cada cliente y venta en tu panel CRM. Todo conectado bajo tu propia marca y sin comisiones.
                 </p>
                 <div className="pt-2">
                   <a 
