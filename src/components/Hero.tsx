@@ -71,9 +71,12 @@ export const Hero: React.FC = () => {
 
           <a
             href="#soluciones"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-[0.16em] btn-outline-dark"
+            className="btn-ver-servicios cursor-pointer"
           >
             <span>Ver qué vendemos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M6 13l6 6 6-6" />
+            </svg>
           </a>
         </div>
 
