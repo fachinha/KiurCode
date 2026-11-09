@@ -153,6 +153,17 @@ body {
   backface-visibility: hidden;
 }
 
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .marquee-container {
+    mask-image: linear-gradient(90deg, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+  }
+}
+
 /* ================= Barra de progreso superior en rojo estilo Algoritmia ================= */
 #prog {
   position: fixed;
