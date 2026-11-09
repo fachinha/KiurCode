@@ -1,17 +1,92 @@
-import React, { useState } from 'react';
-import { MessageCircle, ArrowRight, ShieldCheck, Zap, QrCode, Star, Eye, Check, Layers } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { 
+  MessageCircle, 
+  ArrowRight, 
+  ShieldCheck, 
+  Zap, 
+  QrCode, 
+  Star, 
+  Eye, 
+  Check, 
+  Layers, 
+  ChevronLeft, 
+  ChevronRight 
+} from 'lucide-react';
 import { SMART_CARD_OPTIONS, getWhatsAppUrl, WHATSAPP_MESSAGES } from '../data/content';
 
 export const SmartCardsSection: React.FC = () => {
   const [activeModalImage, setActiveModalImage] = useState<string | null>(null);
+  const [filter, setFilter] = useState<'all' | 'combos' | 'individual'>('all');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isInteracting, setIsInteracting] = useState(false);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Duplicating the 7 card options to create a seamless infinite marquee loop
-  const infiniteCards = [...SMART_CARD_OPTIONS, ...SMART_CARD_OPTIONS];
+  const filteredCards = SMART_CARD_OPTIONS.filter((card) => {
+    if (filter === 'combos') return card.type === 'combo';
+    if (filter === 'individual') return card.type === 'individual';
+    return true;
+  });
+
+  const handleScroll = () => {
+    if (!carouselRef.current) return;
+    const { scrollLeft } = carouselRef.current;
+    const firstCard = carouselRef.current.querySelector('article');
+    if (firstCard) {
+      const cardWidth = firstCard.clientWidth + 16;
+      const index = Math.round(scrollLeft / cardWidth);
+      setCurrentIndex(Math.min(Math.max(index, 0), filteredCards.length - 1));
+    }
+  };
+
+  const scrollToIndex = (index: number) => {
+    if (!carouselRef.current) return;
+    const firstCard = carouselRef.current.querySelector('article');
+    if (firstCard) {
+      const cardWidth = firstCard.clientWidth + 16;
+      carouselRef.current.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+      setCurrentIndex(index);
+    }
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    const targetIndex = direction === 'left' 
+      ? Math.max(0, currentIndex - 1) 
+      : Math.min(filteredCards.length - 1, currentIndex + 1);
+    scrollToIndex(targetIndex);
+  };
+
+  const handleFilterChange = (newFilter: 'all' | 'combos' | 'individual') => {
+    setFilter(newFilter);
+    setCurrentIndex(0);
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+    }
+  };
+
+  // Subtle auto-advance when user is not interacting
+  useEffect(() => {
+    if (isInteracting) return;
+    const interval = setInterval(() => {
+      if (!carouselRef.current) return;
+      const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
+      if (scrollLeft >= scrollWidth - clientWidth - 20) {
+        scrollToIndex(0);
+      } else {
+        const targetIndex = (currentIndex + 1) % filteredCards.length;
+        scrollToIndex(targetIndex);
+      }
+    }, 4500);
+
+    return () => clearInterval(interval);
+  }, [isInteracting, currentIndex, filteredCards.length]);
 
   return (
     <section id="tarjetas" className="py-24 bg-kiur-bgAlt relative overflow-hidden border-b border-zinc-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-        {/* Section Header */}
+        {/* Section Header (Compliant with no eyebrow pills above h2) */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
           <div className="max-w-3xl">
             <h2 className="text-3xl sm:text-5xl font-display font-black text-zinc-950 tracking-tight uppercase mb-4">
@@ -23,7 +98,7 @@ export const SmartCardsSection: React.FC = () => {
             </p>
           </div>
 
-          {/* CTA */}
+          {/* CTA Header Button */}
           <div className="shrink-0 flex items-center gap-3">
             <a
               href={getWhatsAppUrl(WHATSAPP_MESSAGES.cards)}
@@ -39,18 +114,96 @@ export const SmartCardsSection: React.FC = () => {
         </div>
       </div>
 
-      {/* CONTINUOUS HORIZONTAL CAROUSEL WITH FULL PRICING, SAVINGS & WHATSAPP BUTTONS */}
-      <div className="w-full mb-16 marquee-container py-4">
+      {/* FILTER TABS & CAROUSEL NAVIGATION */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          {/* Categories */}
+          <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 scrollbar-none">
+            <button
+              onClick={() => handleFilterChange('all')}
+              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
+                filter === 'all'
+                  ? 'bg-zinc-950 text-white shadow-sm'
+                  : 'bg-white border border-zinc-200 text-zinc-600 hover:text-zinc-950 hover:border-zinc-300'
+              }`}
+            >
+              Todas ({SMART_CARD_OPTIONS.length})
+            </button>
+            <button
+              onClick={() => handleFilterChange('combos')}
+              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap flex items-center gap-1.5 ${
+                filter === 'combos'
+                  ? 'bg-kiur-red text-white shadow-sm'
+                  : 'bg-white border border-zinc-200 text-zinc-600 hover:text-kiur-red hover:border-zinc-300'
+              }`}
+            >
+              <Layers className="w-3.5 h-3.5" />
+              <span>Packs con Ahorro (3)</span>
+            </button>
+            <button
+              onClick={() => handleFilterChange('individual')}
+              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
+                filter === 'individual'
+                  ? 'bg-zinc-950 text-white shadow-sm'
+                  : 'bg-white border border-zinc-200 text-zinc-600 hover:text-zinc-950 hover:border-zinc-300'
+              }`}
+            >
+              Individuales (4)
+            </button>
+          </div>
+
+          {/* Prev / Next Arrows */}
+          <div className="flex items-center gap-2 self-end sm:self-auto">
+            <button
+              onClick={() => scroll('left')}
+              disabled={currentIndex === 0}
+              className="w-10 h-10 rounded-full bg-white border border-zinc-200 text-zinc-800 hover:text-black hover:border-zinc-400 shadow-sm flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              aria-label="Ver tarjeta anterior"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <span className="text-xs font-mono font-bold text-zinc-500 px-1">
+              {currentIndex + 1} / {filteredCards.length}
+            </span>
+            <button
+              onClick={() => scroll('right')}
+              disabled={currentIndex === filteredCards.length - 1}
+              className="w-10 h-10 rounded-full bg-white border border-zinc-200 text-zinc-800 hover:text-black hover:border-zinc-400 shadow-sm flex items-center justify-center transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+              aria-label="Ver siguiente tarjeta"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Swipe Cue */}
+        <div className="flex sm:hidden items-center justify-center gap-1.5 text-[11px] text-zinc-500 font-medium mt-3">
+          <span>👈</span>
+          <span>Deslizá con el dedo para comparar modelos y precios</span>
+          <span>👉</span>
+        </div>
+      </div>
+
+      {/* FULL RESPONSIVE INTERACTIVE CAROUSEL CONTAINER */}
+      <div className="w-full relative px-2 sm:px-4">
         <div
-          className="flex w-max marquee-content animate-marquee-slow gap-6 px-4"
+          ref={carouselRef}
+          onScroll={handleScroll}
+          onTouchStart={() => setIsInteracting(true)}
+          onTouchEnd={() => {
+            setTimeout(() => setIsInteracting(false), 5000);
+          }}
+          onMouseEnter={() => setIsInteracting(true)}
+          onMouseLeave={() => setIsInteracting(false)}
+          className="flex gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-none px-4 sm:px-8 py-4"
         >
-          {infiniteCards.map((card, idx) => {
+          {filteredCards.map((card, idx) => {
             const isCombo = card.type === 'combo';
 
             return (
-              <div
+              <article
                 key={`${card.id}-${idx}`}
-                className={`w-[320px] sm:w-[350px] shrink-0 rounded-3xl overflow-hidden bg-white flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-2 border ${
+                className={`w-[85vw] max-w-[340px] sm:w-[350px] shrink-0 snap-center rounded-3xl overflow-hidden bg-white flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl border ${
                   card.badge === 'Recomendado'
                     ? 'border-2 border-kiur-red ring-2 ring-kiur-red/20'
                     : 'border-zinc-200 hover:border-zinc-300'
@@ -66,7 +219,7 @@ export const SmartCardsSection: React.FC = () => {
                     src={card.image}
                     alt={`Tarjeta ${card.name}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading={idx < 4 ? "eager" : "lazy"}
+                    loading={idx < 3 ? "eager" : "lazy"}
                     decoding="async"
                     width={600}
                     height={450}
@@ -78,7 +231,7 @@ export const SmartCardsSection: React.FC = () => {
                     <Eye className="w-4 h-4" />
                   </div>
 
-                  {/* Category Pill Tag */}
+                  {/* Category Tag */}
                   <div className="absolute top-3 left-3 flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md border border-zinc-200 text-[10px] font-mono text-zinc-900 font-bold shadow-sm">
                     {isCombo ? <Layers className="w-3 h-3 text-kiur-red" /> : <Star className="w-3 h-3 text-amber-500 fill-current" />}
                     <span>{isCombo ? 'Pack Promocional' : 'NFC + QR'}</span>
@@ -101,11 +254,11 @@ export const SmartCardsSection: React.FC = () => {
                 </div>
 
                 {/* 2. Card Content & Pricing */}
-                <div className="p-6 flex flex-col justify-between flex-grow">
+                <div className="p-5 sm:p-6 flex flex-col justify-between flex-grow">
                   <div>
                     {/* Header */}
                     <div className="flex items-center justify-between mb-1">
-                      <h3 className="font-display font-black text-2xl text-zinc-950 uppercase tracking-tight">
+                      <h3 className="font-display font-black text-xl sm:text-2xl text-zinc-950 uppercase tracking-tight">
                         {card.name}
                       </h3>
                       <span className="text-[10px] font-mono uppercase font-bold text-zinc-400">
@@ -133,8 +286,8 @@ export const SmartCardsSection: React.FC = () => {
                           </div>
 
                           {/* BOLD GREEN SAVINGS CALLOUT */}
-                          <div className="py-2 px-3 rounded-xl bg-emerald-500/10 border-2 border-emerald-500 text-center my-3">
-                            <span className="text-lg sm:text-xl font-black text-emerald-600 uppercase tracking-tight block">
+                          <div className="py-2 px-3 rounded-xl bg-emerald-500/10 border-2 border-emerald-500 text-center my-2.5">
+                            <span className="text-base sm:text-lg font-black text-emerald-600 uppercase tracking-tight block">
                               ¡{card.savingsText}!
                             </span>
                             <span className="text-[10px] font-mono text-emerald-700 font-bold uppercase tracking-wider">
@@ -183,10 +336,26 @@ export const SmartCardsSection: React.FC = () => {
                     <span>Pedir {card.name}</span>
                   </a>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
+      </div>
+
+      {/* Pagination Dots Indicator */}
+      <div className="flex items-center justify-center gap-1.5 mt-4 mb-16">
+        {filteredCards.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => scrollToIndex(i)}
+            className={`h-2 rounded-full transition-all cursor-pointer ${
+              currentIndex === i 
+                ? 'w-7 bg-kiur-red' 
+                : 'w-2 bg-zinc-300 hover:bg-zinc-400'
+            }`}
+            aria-label={`Ir a tarjeta ${i + 1}`}
+          />
+        ))}
       </div>
 
       {/* Feature Breakdown & Honest Specs */}

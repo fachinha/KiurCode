@@ -91,7 +91,7 @@ export const WhatsAppFloating: React.FC = () => {
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full btn-red flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-kiur-red relative cursor-pointer"
+          className="w-14 h-14 rounded-full btn-green flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-emerald-500 relative cursor-pointer"
           aria-label="Abrir opciones de contacto por WhatsApp"
         >
           {isOpen ? (

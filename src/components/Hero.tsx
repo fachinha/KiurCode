@@ -62,7 +62,7 @@ export const Hero: React.FC = () => {
             href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-[0.16em] btn-red"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full text-xs font-bold uppercase tracking-[0.16em] btn-green"
           >
             <MessageCircle className="w-4 h-4" />
             <span>Hablemos de tu proyecto</span>
